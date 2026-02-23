@@ -5,6 +5,7 @@ import { selectTheme } from './redux/slices/themeSlice';
 import HomePage from './pages/HomePage';
 import RegistrationPage from './pages/RegistrationPage';
 import ParticipantsPage from './pages/ParticipantsPage';
+import AnalyticsPage from './pages/AnalyticsPage';
 import ErrorToast from './components/ErrorToast';
 import './App.css';
 
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/register/:eventId" element={<RegistrationPage />} />
           <Route path="/participants/:eventId" element={<ParticipantsPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="*" element={<div className="app-container"><h2>404 - Сторінку не знайдено</h2></div>} />
         </Routes>
         <ErrorToast />

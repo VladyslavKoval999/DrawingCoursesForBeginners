@@ -31,3 +31,34 @@ export const registerUser = async (data) => {
   console.log("Дані успішно отримано сервером:", data);
   return { success: true };
 };
+
+const generateMockStats = () => {
+  const stats = [];
+  const today = new Date();
+  
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    stats.push({
+      date: date.toISOString().split('T')[0],
+      registrations: Math.floor(Math.random() * 20) + 5
+    });
+  }
+  return stats;
+};
+
+export const fetchRegistrationStats = async () => {
+  await delay(600);
+  return generateMockStats();
+};
+
+export const fetchExternalUsers = async () => {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        if (!response.ok) throw new Error('Failed to fetch');
+        return await response.json();
+    } catch (error) {
+        console.error("External API Error:", error);
+        return [];
+    }
+};
