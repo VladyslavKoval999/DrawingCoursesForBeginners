@@ -17,4 +17,4 @@
 2. `npm run dev`
 
 ## Деплой
-Проєкт доступний за посиланням: [Встав сюди лінк з Vercel]
+Проєкт доступний за посиланням: https://github.com/VladyslavKoval999/DrawingCoursesForBeginners/tree/main
